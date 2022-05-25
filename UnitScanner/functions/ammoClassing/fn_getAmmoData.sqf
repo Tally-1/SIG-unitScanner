@@ -32,7 +32,10 @@ then{
 
 private _SplashDamage	= getNumber (configfile >> "CfgAmmo" >> _Ammo >> "indirectHit");
 private _SplashRange	= getNumber (configfile >> "CfgAmmo" >> _Ammo >> "indirectHitRange");
-private _grenade		= (getNumber (configfile >> "CfgAmmo" >> _Ammo >> "fuseDistance") > 2 &&{_SplashDamage > 3 &&{_SplashRange > 3}});
+private _grenade		= (getNumber (configfile >> "CfgAmmo" >> _Ammo >> "fuseDistance") > 2 
+						  &&{_SplashDamage > 3 
+						  &&{_SplashRange > 3}});
+						
 private _Propelled		= (getNumber (configfile >> "CfgAmmo" >> _Ammo >> "maxSpeed")) > 0;
 private _Guided			= (getNumber (configfile >> "CfgAmmo" >> _Ammo >> "maneuvrability")) > 1;
 private _AA				= (getNumber (configfile >> "CfgAmmo" >> _Ammo >> "airLock")) == 2;

@@ -3,7 +3,7 @@ private _armorLvl		= 0;
 private _macro	 		= _vehicleData 		get "macro";
 private _armorData	 	= _vehicleData 		get "armorData";
 private _HP 		 	= _armorData 		get "HP";
-private _structArmor	 	= _armorData 		get "armor";
+private _structArmor	= _armorData 		get "armor";
 private _crewExposed 	= _armorData 		get "openVehicle" > 0;
 
 private _carMacro		= _macro == "Car_F";

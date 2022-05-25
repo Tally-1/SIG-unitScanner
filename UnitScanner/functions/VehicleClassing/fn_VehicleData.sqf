@@ -1,9 +1,5 @@
 params ["_Vehicle"];
 private _vehicleCFG = (typeOf _vehicle);
-/*if!(_Vehicle isKindOf "land"
-&&{!(_Vehicle isKindOf "man")})
-exitwith{systemChat "non-land-vehicle passed to Tally_Fnc_landVehicleData"};*/
-
 private _vehicleData = SIG_VehicleData get _vehicleCFG;
 if(!isNil "_vehicleData")exitwith{_vehicleData};
 
