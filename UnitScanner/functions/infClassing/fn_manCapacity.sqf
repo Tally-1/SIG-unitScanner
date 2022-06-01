@@ -13,10 +13,10 @@ private _weaponClass		= _rifleData 			get "class ID";
 private _launcherClass 	= _launcherData 		get "class ID";
 private _rifleAmmo 	 	= _rifleData 			get "ammoClasses";
 
-private _mediumCaliber	= [_rifleAmmo,	2.1, 2.1, [2.4, 3]]	call Tally_Fnc_approxClass;
-private _highCaliber		= [_rifleAmmo,	2.2, 4.3] 				call Tally_Fnc_approxClass;
-private _GL				= [[_weaponClass],	2.1, 2.4] 			call Tally_Fnc_approxClass;
-private _MG			= [[_weaponClass],	3, 3.3] 			call Tally_Fnc_approxClass;
+private _mediumCaliber	= [_rifleAmmo,	2.1, 2.1, [2.4, 3]]	call ObjScan_fnc_approxClass;
+private _highCaliber		= [_rifleAmmo,	2.2, 4.3] 				call ObjScan_fnc_approxClass;
+private _GL				= [[_weaponClass],	2.1, 2.4] 			call ObjScan_fnc_approxClass;
+private _MG			= [[_weaponClass],	3, 3.3] 			call ObjScan_fnc_approxClass;
 private _GMG			= _weaponClass 			== 2.5;
 
 private _scopeMultiplier	 = 1;
@@ -93,9 +93,9 @@ private _Anti_Vehicle		= ((_AtValue	* _scopeMultiplier) * _caliberMultiplier) + 
 private _Anti_Air			= ((_AtValue	* _scopeMultiplier) * _caliberMultiplier) + _AA_launcherValue;
 if(_GMG or !(_hasRifle))then{_Anti_Air	= 0 + _AA_launcherValue};
 
-_Anti_Infantry	= [_Anti_Infantry]	call Tally_Fnc_decimals;
-_Anti_Vehicle		= [_Anti_Vehicle, 1] 	call Tally_Fnc_decimals;
-_Anti_Air			= [_Anti_Air, 	1] 	call Tally_Fnc_decimals;
+_Anti_Infantry	= [_Anti_Infantry]	call ObjScan_fnc_decimals;
+_Anti_Vehicle		= [_Anti_Vehicle, 1] 	call ObjScan_fnc_decimals;
+_Anti_Air			= [_Anti_Air, 	1] 	call ObjScan_fnc_decimals;
 
 _capacities set ["anti infantry", _Anti_Infantry];
 _capacities set ["anti vehicle",	_Anti_Vehicle];

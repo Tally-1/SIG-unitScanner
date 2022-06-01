@@ -6,10 +6,10 @@ private _launcher		= (secondaryWeapon _man);
 private _sideArm		= (handgunWeapon _man);
 
 
-private _rifleData 		= [_rifle] 		call Tally_Fnc_weaponData;
-private _scopeRange		= [_scope] 		call Tally_Fnc_scopeRange;
-private _launcherData	= [_launcher] 	call Tally_Fnc_weaponData;
-private _sideArmData	= [_sideArm] 	call Tally_Fnc_weaponData;
+private _rifleData 		= [_rifle] 		call ObjScan_fnc_weaponData;
+private _scopeRange		= [_scope] 		call ObjScan_fnc_scopeRange;
+private _launcherData	= [_launcher] 	call ObjScan_fnc_weaponData;
+private _sideArmData	= [_sideArm] 	call ObjScan_fnc_weaponData;
 
 _weaponData set ["primary", 	_rifleData];
 _weaponData set ["scope range", _scopeRange];

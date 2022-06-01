@@ -1,7 +1,7 @@
 params ["_helmet"];
 /*
 Author: Tally
-For comments see Tally_Fnc_VestData.
+For comments see ObjScan_fnc_VestData.
 */
 /*
 The following numbers represent the _finalArmour extracted from vanilla helmets.

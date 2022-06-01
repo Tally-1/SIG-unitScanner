@@ -29,18 +29,18 @@ private _SMG_Cursor		= (_cursorType == "smg");
 private _pistol_Cursor	= (_cursorType == "hgun");
 
 
-private _pistolAmmo		= [_ammoClasses, 1, 1, 		[0.8]]	call Tally_Fnc_approxClass;
-private _smallRifleAmmo	= [_ammoClasses, 2, 2, 		[0.8]]	call Tally_Fnc_approxClass;
-private _standRifleAmmo	= [_ammoClasses, 2.1, 2.1, [0.8]] 	call Tally_Fnc_approxClass;
-private _heavyRifleAmmo	= [_ammoClasses, 2.2, 2.2, [0.8]] 	call Tally_Fnc_approxClass;
-private _standLowRifleA	= [_ammoClasses, 2, 2.1, 	[0.8]] 	call Tally_Fnc_approxClass;
-private _standHighRifleA= [_ammoClasses, 2.2, 2.3, [0.8]] 	call Tally_Fnc_approxClass;
-private _bigRifleAmmo	= [_ammoClasses, 2.3, 2.3, [0.8]] 	call Tally_Fnc_approxClass;
-private _APRifleAmmo	= [_ammoClasses, 2.4, 2.5, [0.8]] 	call Tally_Fnc_approxClass;
-private _sniperAmmo		= [_ammoClasses, 2.2, 2.5, [0.8]] 	call Tally_Fnc_approxClass;
-private _rhsSniperAmmo	= [_ammoClasses, 2.2, 2.5, [0.8, 4]] 	call Tally_Fnc_approxClass;
-private _lmgAmmo		= [_ammoClasses, 2, 2.3, 	[0.8]] 	call Tally_Fnc_approxClass;
-private _GMG_Ammo		= [_ammoClasses, 3, 3, 		[9.1, 9.2, 9.5, 0.9]] call Tally_Fnc_approxClass;
+private _pistolAmmo		= [_ammoClasses, 1, 1, 		[0.8]]	call ObjScan_fnc_approxClass;
+private _smallRifleAmmo	= [_ammoClasses, 2, 2, 		[0.8]]	call ObjScan_fnc_approxClass;
+private _standRifleAmmo	= [_ammoClasses, 2.1, 2.1, [0.8]] 	call ObjScan_fnc_approxClass;
+private _heavyRifleAmmo	= [_ammoClasses, 2.2, 2.2, [0.8]] 	call ObjScan_fnc_approxClass;
+private _standLowRifleA	= [_ammoClasses, 2, 2.1, 	[0.8]] 	call ObjScan_fnc_approxClass;
+private _standHighRifleA= [_ammoClasses, 2.2, 2.3, [0.8]] 	call ObjScan_fnc_approxClass;
+private _bigRifleAmmo	= [_ammoClasses, 2.3, 2.3, [0.8]] 	call ObjScan_fnc_approxClass;
+private _APRifleAmmo	= [_ammoClasses, 2.4, 2.5, [0.8]] 	call ObjScan_fnc_approxClass;
+private _sniperAmmo		= [_ammoClasses, 2.2, 2.5, [0.8]] 	call ObjScan_fnc_approxClass;
+private _rhsSniperAmmo	= [_ammoClasses, 2.2, 2.5, [0.8, 4]] 	call ObjScan_fnc_approxClass;
+private _lmgAmmo		= [_ammoClasses, 2, 2.3, 	[0.8]] 	call ObjScan_fnc_approxClass;
+private _GMG_Ammo		= [_ammoClasses, 3, 3, 		[9.1, 9.2, 9.5, 0.9]] call ObjScan_fnc_approxClass;
 
 private _smallAmmoMax	= false;
 private _standAmmoMax	= false;
@@ -57,7 +57,7 @@ then{
 
 
 private _ShotgunMuzzle	= (!(_noUnderBarrel)
-						&&{[_subAmmoClasses, 2.3, 2.4, [9.5]] call Tally_Fnc_approxClass});
+						&&{[_subAmmoClasses, 2.3, 2.4, [9.5]] call ObjScan_fnc_approxClass});
 						
 private _GL_Muzzle	= (!(_noUnderBarrel)
 						&&{3 in _subAmmoClasses});
@@ -188,23 +188,23 @@ private _handHeldGMG	= (_GMG_Ammo
 					
 private _infRLauncher	= (_minAmmoCap == 1
 						&&{_maxAmmoCap == 1
-						&& [_ammoClasses, 6, 6.2] call Tally_Fnc_approxClass});
+						&& [_ammoClasses, 6, 6.2] call ObjScan_fnc_approxClass});
 						
 private _infAGLauncher	= (_minAmmoCap == 1
 						&&{_maxAmmoCap == 1
-						&& [_ammoClasses, 7, 7.2] call Tally_Fnc_approxClass});
+						&& [_ammoClasses, 7, 7.2] call ObjScan_fnc_approxClass});
 
 private _infAALauncher	= (_minAmmoCap == 1
 						&&{_maxAmmoCap == 1
-						&& [_ammoClasses, 7.3, 7.3] call Tally_Fnc_approxClass});
+						&& [_ammoClasses, 7.3, 7.3] call ObjScan_fnc_approxClass});
 						
 private _infCoMLauncher	= (_minAmmoCap == 1
 						&&{_maxAmmoCap == 1
-						&& [_ammoClasses, 7, 7.3] call Tally_Fnc_approxClass});
+						&& [_ammoClasses, 7, 7.3] call ObjScan_fnc_approxClass});
 						
 private _all_InfLaunchers	= (_minAmmoCap == 1
 						&&{_maxAmmoCap == 1
-						&& [_ammoClasses, 6, 7.3] call Tally_Fnc_approxClass});
+						&& [_ammoClasses, 6, 7.3] call ObjScan_fnc_approxClass});
 
 
 
@@ -212,7 +212,7 @@ if(_ammoClasses isEqualTo [0.9])					exitWith{0.9};
 if(_ammoClasses isEqualTo [9])					exitWith{8	};
 if(_ammoClasses isEqualTo [9.1])					exitWith{0.7};
 if(_ammoClasses isEqualTo [9.2])					exitWith{0.6};
-if([_name, "smoke"] call Tally_Fnc_FindSubString)	exitWith{0.6};
+if([_name, "smoke"] call ObjScan_fnc_FindSubString)	exitWith{0.6};
 
 if 	((_pistolAmmo				
 && 	{_maxAmmoCap < 31
@@ -289,7 +289,7 @@ if(_infAALauncher)			exitWith{4.2};	/*AA launchers 		1-shot*/
 if(_infCoMLauncher)			exitWith{4.3};	/*AGM-AA launchers	1-shot*/
 if(_all_InfLaunchers)		exitWith{4.4};	/*ALL launchers		1-shot*/
 
-_class = [_weaponData, _CFGname] call Tally_Fnc_vehicleWeaponClass;
+_class = [_weaponData, _CFGname] call ObjScan_fnc_vehicleWeaponClass;
 
 
 if(_name == "")		exitWith{-1};

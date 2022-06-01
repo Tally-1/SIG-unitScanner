@@ -24,16 +24,16 @@ then{
 					private _indicator 		 = getText (configfile >> "CfgWeapons" >> _weapon >> _x >> "cursor");
 					private _indicator2 		 = getText (configfile >> "CfgWeapons" >> _weapon >> _x >> "cursoraim");
 					private _magCount		 = (count _muzzleMagazines) - 1;
-					private _weaponModes	 = [_X] call Tally_Fnc_weaponModes;
+					private _weaponModes	 = [_X] call ObjScan_fnc_weaponModes;
 					
 					
 					for "_I" from 0 to _magCount do
 					{
 						private _mag 		= _muzzleMagazines select _I;
-						private _magData 	= [_mag] call Tally_Fnc_magazineData;
+						private _magData 	= [_mag] call ObjScan_fnc_magazineData;
 						private _clipSize		= (_magData get "AmmoCount");
 						private _ammo		= (_magData get "AmmoType");
-						private _ammoData	= [_ammo] call Tally_Fnc_getAmmoData;
+						private _ammoData	= [_ammo] call ObjScan_fnc_getAmmoData;
 						
 						_ammoClasses 	pushBackUnique (_ammoData get "class ID");
 						_allAmmoClasses 	pushBackUnique (_ammoData get "class ID");

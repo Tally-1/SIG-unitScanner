@@ -11,7 +11,7 @@ if(_special == "laser")exitWith{0.9};
 if(_Propelled)
 /* rockets && misiles */
 then{
-		_ammoClass = [_AmmoData] call Tally_Fnc_Get_MisileClass;
+		_ammoClass = [_AmmoData] call ObjScan_fnc_Get_MisileClass;
 	}
 /*bullets && shells*/
 else{
@@ -19,9 +19,9 @@ else{
 		&&{_speed < 700})exitWith{_ammoClass = 3};
 		
 		if(_AmmoData get "grenade"
-		&&{_speed >= 700})exitWith{_ammoClass = [4, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_speed >= 700})exitWith{_ammoClass = [4, _warHead] call ObjScan_fnc_WarheadClass};
 		
-		_ammoClass = [_AmmoData] call Tally_Fnc_Get_ProjectileClass;
+		_ammoClass = [_AmmoData] call ObjScan_fnc_Get_ProjectileClass;
 	};
 
 _ammoClass

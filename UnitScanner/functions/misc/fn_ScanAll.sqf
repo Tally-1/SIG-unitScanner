@@ -14,15 +14,15 @@ systemChat format["Scanning %1 objects...", _objectCount];
 	if((_x isKindOf "land"
 	or _x isKindOf "air")
 	&&{!(_x isKindOf "man")})
-	then{[_x] call Tally_Fnc_VehicleData};
+	then{[_x] call ObjScan_fnc_VehicleData};
 	
 	if(_x isKindOf "man")
 	then{
-			[_x] call Tally_Fnc_infWeaponData;
-			[_x] call Tally_Fnc_infArmorData;
+			[_x] call ObjScan_fnc_infWeaponData;
+			[_x] call ObjScan_fnc_infArmorData;
 		};
 	
-	private _Weapons = [_x] call Tally_Fnc_GetVehicleWeapons;
+	private _Weapons = [_x] call ObjScan_fnc_GetVehicleWeapons;
 	for "_I" from 0 to ((count _weapons)-1)do{_vehicleWeapons pushBackUnique (_weapons select _I)};
 	_counter = (_counter + 1);
 	
@@ -37,8 +37,8 @@ systemChat format["Scanning %1 objects...", _objectCount];
 {VEH_MEN pushBackUnique _x}forEach allUnits;
 
 {
-	[_x] call Tally_Fnc_infWeaponData;
-	[_x] call Tally_Fnc_infArmorData;
+	[_x] call ObjScan_fnc_infWeaponData;
+	[_x] call ObjScan_fnc_infArmorData;
 	_counter = (_counter + 1);
 	if(time > _iterationTimer)
 	then{
@@ -51,7 +51,7 @@ systemChat format["Scanning %1 objects...", _objectCount];
 
 if(_longScan)then{Hint "getting vehicle weapon data"};
 
-{[_x] call Tally_Fnc_weaponData}forEach _vehicleWeapons;
+{[_x] call ObjScan_fnc_weaponData}forEach _vehicleWeapons;
 
 
 switch _HashToCopy do

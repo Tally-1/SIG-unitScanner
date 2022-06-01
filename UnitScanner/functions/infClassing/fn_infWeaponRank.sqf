@@ -30,8 +30,8 @@ exitWith{_weaponRanking};
 if(_hasRifle)
 then{
 		_weaponRanking = (_weaponRanking +3);
-		private _lowCaliber 	= [_rifleAmmo, 1, 2.1, [3, 9.1, 9.2, 9.5]] call Tally_Fnc_approxClass;
-		private _highCaliber	= [_rifleAmmo, 2.2, 4.3, [9.1, 9.2, 9.5]] call Tally_Fnc_approxClass;
+		private _lowCaliber 	= [_rifleAmmo, 1, 2.1, [3, 9.1, 9.2, 9.5]] call ObjScan_fnc_approxClass;
+		private _highCaliber	= [_rifleAmmo, 2.2, 4.3, [9.1, 9.2, 9.5]] call ObjScan_fnc_approxClass;
 		private _GL			= 3 in _rifleAmmo;
 		private _GMG		= (_rifleData get "class ID") == 2.5;
 		if(_GL)			then{_weaponRanking = (_weaponRanking +1)};

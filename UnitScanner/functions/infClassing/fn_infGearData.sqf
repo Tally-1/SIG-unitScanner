@@ -1,11 +1,11 @@
 params ["_man"];
 private _gearData		= createHashMap;
-private _armorData 		= [_man] 					call Tally_Fnc_infArmorData;
-private _weaponData		= [_man] 					call Tally_Fnc_infWeaponData;
-private _gearRanking	= [_armorData, _weaponData]	call Tally_Fnc_rankUnitGear;
-private _capacities		= [_weaponData] 			call Tally_Fnc_manCapacity;
+private _armorData 		= [_man] 					call ObjScan_fnc_infArmorData;
+private _weaponData		= [_man] 					call ObjScan_fnc_infWeaponData;
+private _gearRanking	= [_armorData, _weaponData]	call ObjScan_fnc_rankUnitGear;
+private _capacities		= [_weaponData] 			call ObjScan_fnc_manCapacity;
 private _armorLevel		= (_gearRanking get "armor");
-private _description	= [_armorLevel, _weaponData]call Tally_Fnc_DescribeMan;
+private _description	= [_armorLevel, _weaponData]call ObjScan_fnc_DescribeMan;
 
 _gearData set ["gearRanking", 	_gearRanking];
 _gearData set ["description", 	_description];

@@ -22,7 +22,7 @@ private _VTOL			= (getNumber	(configfile >> "CfgVehicles" >> _vehicleCFG >> "vto
 private _typeData		= createHashMap;
 
 
-if([_name, "Volga"] call Tally_Fnc_FindSubString) then {_name = "GAZ-24"};
+if([_name, "Volga"] call ObjScan_fnc_FindSubString) then {_name = "GAZ-24"};
 
 
 MACROS pushBackUnique _macro;
@@ -57,14 +57,14 @@ private _turretConfigs		= "true" configClasses (configfile >> "CfgVehicles" >> _
 private _allWeapons			= createHashMap;
 private _WeaponTypes		= [];
 private _crew				= _driver;
-private _weapons 			= [_Vehicle] call Tally_Fnc_GetVehicleWeapons;
+private _weapons 			= [_Vehicle] call ObjScan_fnc_GetVehicleWeapons;
 
 {_crew	= (_crew + getNumber (_x >> "hasGunner"))} forEach _turretConfigs;
 
 {
 	private _subData	= createHashMap;
 	private _weapon 	= _x;
-	private _weaponData	= [_weapon] call Tally_Fnc_weaponData;
+	private _weaponData	= [_weapon] call ObjScan_fnc_weaponData;
 				
 	_subData 	set ["class ID", 	(_weaponData get "class ID")];
 	_subData 	set ["name", 		(_weaponData get "name")];
@@ -80,7 +80,7 @@ _armorData set 	["HP", 					_HP];
 _armorData set 	["armor", 				_Armor];
 _armorData set 	["Calculated HP",		round(_HP / _Armor)];
 _armorData set 	["combined HP",			round(_HP + _Armor)];
-_armorData set 	["Standard Armor-Level",[_armorData] call Tally_Fnc_vehicleArmorLevel];
+_armorData set 	["Standard Armor-Level",[_armorData] call ObjScan_fnc_vehicleArmorLevel];
 _armorData set 	["Alt Armor-Level",		round(_Armor / _HP)];
 _armorData set 	["damageResistance",	_damageResistance];
 _armorData set 	["openVehicle",			_hitCrew];
@@ -94,15 +94,15 @@ _vehicleData set ["name", 			 	_name];
 _vehicleData set ["macro", 			 	_macro];
 _vehicleData	set ["maxSpeed", 		 	_maxSpeed];
 
-_armorData 	set ["CUP-armor", 			([_vehicleData] call Tally_Fnc_CupArmor)];
+_armorData 	set ["CUP-armor", 			([_vehicleData] call ObjScan_fnc_CupArmor)];
 
 _chassis 		set ["wheels", 				_wheels];
 _chassis 		set ["mass", 				round _mass];
 _chassis 		set ["size", 				round _size];
-_chassis 		set ["shape", 				[_Vehicle] call Tally_Fnc_objectShape];
+_chassis 		set ["shape", 				[_Vehicle] call ObjScan_fnc_objectShape];
 
-private _chassisID 			= [_vehicleData, _typeData, _chassis] call Tally_Fnc_getChassis;
-private _chassisDescription	= [_chassisID] call Tally_Fnc_chassisDespcription;
+private _chassisID 			= [_vehicleData, _typeData, _chassis] call ObjScan_fnc_getChassis;
+private _chassisDescription	= [_chassisID] call ObjScan_fnc_chassisDespcription;
 
 _chassis 		set ["chassisID", 			_chassisID];
 _chassis 		set ["chassisDescription",	_chassisDescription];

@@ -12,7 +12,7 @@ private _wells		= (getArray (configfile >> "CfgWeapons" >> _weapon >> "magazineW
 	for "_I" from 0 to _ConfigCount
 	do 	{
 			private _mags = (getArray (_Configs select _I));
-			_wellMags = [_mags, _wellMags] call Tally_Fnc_fillArrFromArr;
+			_wellMags = [_mags, _wellMags] call ObjScan_fnc_fillArrFromArr;
 		};
 	
 	private _magCount	= (count _wellMags) -1;

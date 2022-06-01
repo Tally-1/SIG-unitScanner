@@ -1,9 +1,9 @@
 params ["_man"];
 
 private _armorData	= createHashMap;
-private _helmetData = [(headGear _man)]	call Tally_Fnc_helmetData;
-private _vestData 	= [(vest	_man)]	call Tally_Fnc_VestData;
-private _uniformData= [(uniform	_man)]	call Tally_Fnc_uniformArmor;
+private _helmetData = [(headGear _man)]	call ObjScan_fnc_helmetData;
+private _vestData 	= [(vest	_man)]	call ObjScan_fnc_VestData;
+private _uniformData= [(uniform	_man)]	call ObjScan_fnc_uniformArmor;
 
 private _helmetdescription 	= (_helmetData	get "description");
 private _vestdescription 	= (_vestData		get "description");

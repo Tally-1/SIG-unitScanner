@@ -1,6 +1,6 @@
 class CfgFunctions
 {
-	class Tally
+	class ObjScan
 	{
 		class WeaponClassing
 		{

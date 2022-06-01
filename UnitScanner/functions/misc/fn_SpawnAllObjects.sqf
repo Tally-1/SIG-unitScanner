@@ -14,7 +14,7 @@ private _object 		= "";
 
 
 {
-	private _cfg 		= [([_x] joinString "")] call Tally_Fnc_CFGfromConfig;
+	private _cfg 		= [([_x] joinString "")] call ObjScan_fnc_CFGfromConfig;
 	private _isMan 		= (_cfg isKindOf "man");
 	private _spawnThis 	= ((_spawnMen
 						&&{_isMan})
@@ -45,4 +45,4 @@ private _object 		= "";
 		};
 }forEach _configs;
 hint format ["%1 objects spawned. Spawning complete!", _counter];
-[["%1", (count _strConfigs)]] call Tally_Fnc_DebugMsg;
+[["%1", (count _strConfigs)]] call ObjScan_fnc_DebugMsg;

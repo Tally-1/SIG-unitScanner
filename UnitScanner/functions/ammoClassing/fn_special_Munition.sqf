@@ -7,7 +7,7 @@ private _SpecialNames 	= ["mine", "cluster", "smoke", "flare", "chaff", "penetra
 
 
 {
-	private _match = [_strings, _x] call Tally_Fnc_multiStringSearch;
+	private _match = [_strings, _x] call ObjScan_fnc_multiStringSearch;
 	if(_match)then{_special = _x};
 } forEach _SpecialNames;
 

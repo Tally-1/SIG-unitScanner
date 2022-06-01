@@ -42,16 +42,16 @@ then{
 		} forEach _subAmmoClasses;
 	};
 
-private _rifleAmmo		= [_ammoClasses, 2, 2.2] 						call Tally_Fnc_approxClass;
-private _smallAmmo		= [_ammoClasses, 2, 2.5, [0.8]] 				call Tally_Fnc_approxClass;
-private _largeAmmo		= [_ammoClasses, 4, 4.3, [3, 8, 5.1, 0.9]] 	call Tally_Fnc_approxClass;
-private _tankAmmo		= [_ammoClasses, 5, 5.3, [7.1]] 				call Tally_Fnc_approxClass;
-private _artyAmmo		= [_ammoClasses, 8, 8.1, [9.2, 9.3, 9.4]] 		call Tally_Fnc_approxClass;
-private _mortarAmmo	= [_ammoClasses, 8, 8, [9.1, 9.2, 9.3, 9.4]] 	call Tally_Fnc_approxClass;
-private _AGM			= [_ammoClasses, 7, 7.2] 						call Tally_Fnc_approxClass;
-private _AAM			= [_ammoClasses, 7.3, 7.3, [0.9]] 				call Tally_Fnc_approxClass;
-private _rockets			= [_ammoClasses, 6, 6.2] 						call Tally_Fnc_approxClass;
-private _combinedMisiles	= [_ammoClasses, 7, 7.3] 						call Tally_Fnc_approxClass;
+private _rifleAmmo		= [_ammoClasses, 2, 2.2] 						call ObjScan_fnc_approxClass;
+private _smallAmmo		= [_ammoClasses, 2, 2.5, [0.8]] 				call ObjScan_fnc_approxClass;
+private _largeAmmo		= [_ammoClasses, 4, 4.3, [3, 8, 5.1, 0.9]] 	call ObjScan_fnc_approxClass;
+private _tankAmmo		= [_ammoClasses, 5, 5.3, [7.1]] 				call ObjScan_fnc_approxClass;
+private _artyAmmo		= [_ammoClasses, 8, 8.1, [9.2, 9.3, 9.4]] 		call ObjScan_fnc_approxClass;
+private _mortarAmmo	= [_ammoClasses, 8, 8, [9.1, 9.2, 9.3, 9.4]] 	call ObjScan_fnc_approxClass;
+private _AGM			= [_ammoClasses, 7, 7.2] 						call ObjScan_fnc_approxClass;
+private _AAM			= [_ammoClasses, 7.3, 7.3, [0.9]] 				call ObjScan_fnc_approxClass;
+private _rockets			= [_ammoClasses, 6, 6.2] 						call ObjScan_fnc_approxClass;
+private _combinedMisiles	= [_ammoClasses, 7, 7.3] 						call ObjScan_fnc_approxClass;
 
 private _artyAmmoMax	= false;
 private _artyRounds		= false;
@@ -70,7 +70,7 @@ then{
 	};
 
 private _rhsBigRockets	= (_artyRounds
-						&& {[_ammoNames, "rocket"] call Tally_Fnc_multiStringSearch});
+						&& {[_ammoNames, "rocket"] call ObjScan_fnc_multiStringSearch});
 
 private _cupLMG		= (_rifleAmmo 
 						&&{_mgRPS

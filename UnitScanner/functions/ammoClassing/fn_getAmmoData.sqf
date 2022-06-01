@@ -23,7 +23,7 @@ then{_penetration		= getNumber (configfile >> "CfgAmmo" >> _subMun >> "caliber")
 
 if(!(_subMun == ""))
 then{
-		private _subMunDt = [_subMun, true] call Tally_Fnc_getAmmoData;
+		private _subMunDt = [_subMun, true] call ObjScan_fnc_getAmmoData;
 		_subMunData set ["name", _subMun];
 		_subMunData set ["data", _subMunDt];
 	};
@@ -54,10 +54,10 @@ _data set ["grenade", 			_grenade];
 _data set ["propelled",		 	_Propelled];
 _data set ["guided", 			_Guided];
 _data set ["anti air",			_AA];
-_data set ["Special", 			([_Ammo, _data] call Tally_Fnc_special_Munition)];
+_data set ["Special", 			([_Ammo, _data] call ObjScan_fnc_special_Munition)];
 
-private _classID 		= [_data] call Tally_Fnc_ClassifyAmmo;
-private _description	= [_classID] call Tally_Fnc_describeAmmoByClass;
+private _classID 		= [_data] call ObjScan_fnc_ClassifyAmmo;
+private _description	= [_classID] call ObjScan_fnc_describeAmmoByClass;
 
 
 _data set ["class ID", 		_classID];

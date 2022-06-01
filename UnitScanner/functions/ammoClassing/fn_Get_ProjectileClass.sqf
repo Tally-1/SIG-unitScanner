@@ -14,7 +14,7 @@ private _class			= 0;
 if!(_Special == ""
 or _Special == "penetrator")
 exitWith{
-			_class = [_Special] call Tally_Fnc_ClassifySpecialAmmo;
+			_class = [_Special] call ObjScan_fnc_ClassifySpecialAmmo;
 			_class
 		};
 
@@ -58,7 +58,7 @@ then{
 		if(_penetration 		< 10
 		&&{_splashDamage 	< 30
 		&&{_splashRange		<  5
-		&&{_SplashRange 	> 0}}})	exitWith{_class = [4, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_SplashRange 	> 0}}})	exitWith{_class = [4, _warHead] call ObjScan_fnc_WarheadClass};
 		
 		if(_penetration 		< 6
 		&&{_splashDamage 	== 0
@@ -67,13 +67,13 @@ then{
 		&&{_maxPotential > 350
 		&&{_maxPotential < 530
 		&&{_damage >= 90
-		&&{_damage <= 95}}}}}}})exitWith{_class = [4, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_damage <= 95}}}}}}})exitWith{_class = [4, _warHead] call ObjScan_fnc_WarheadClass};
 		
 		/*cannon ++*/
 		if(_penetration 		<= 40
 		&&{_splashDamage 	< 90
 		&&{_splashRange		<  7
-		&&{_SplashRange 	> 0}}})	exitWith{_class = [5, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_SplashRange 	> 0}}})	exitWith{_class = [5, _warHead] call ObjScan_fnc_WarheadClass};
 		
 		
 		/*arty*/
@@ -97,15 +97,15 @@ then{
 		/*Cup cannons*/
 		if(_maxPotential > 16000
 		&&{_splashRange < 3
-		&&{_speed > 700}})			exitWith{_class = [5, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_speed > 700}})			exitWith{_class = [5, _warHead] call ObjScan_fnc_WarheadClass};
 		
 		if(_maxPotential >= 2500
 		&&{_splashRange <= 3
-		&&{_speed > 1100}})			exitWith{_class = [5, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_speed > 1100}})			exitWith{_class = [5, _warHead] call ObjScan_fnc_WarheadClass};
 		
 		if(_maxPotential >= 1600
 		&&{_splashRange <= 6
-		&&{_speed >= 400}})			exitWith{_class = [5, _warHead] call Tally_Fnc_WarheadClass};
+		&&{_speed >= 400}})			exitWith{_class = [5, _warHead] call ObjScan_fnc_WarheadClass};
 	
 	_class = 0.1;	
 	}

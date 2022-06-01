@@ -19,7 +19,7 @@ then{
 		if(count _lethalWeapons > 0)
 		then{
 				private _mainWeaponType 		= selectMax _lethalWeapons;
-				private _mainWeaponDescription 	= [_mainWeaponType] call Tally_Fnc_describeWeaponByClass;
+				private _mainWeaponDescription 	= [_mainWeaponType] call ObjScan_fnc_describeWeaponByClass;
 				_description = [_chassis, _transPortTXT, " (", _mainWeaponDescription, ")"] joinString "";
 			};
 	};

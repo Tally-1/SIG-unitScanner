@@ -17,12 +17,12 @@ private _AmmoClasses	= [];
 
 if(_magazines isEqualTo [])
 then{
-		_magazines = [_weapon] call Tally_Fnc_MagsFromWell;
+		_magazines = [_weapon] call ObjScan_fnc_MagsFromWell;
 	};
 
 
 {
-	private _magData = [_x] call Tally_Fnc_magazineData;
+	private _magData = [_x] call ObjScan_fnc_magazineData;
 	
 	_magCapacity pushBackUnique (_magData get "AmmoCount");
 	_AmmoTypes pushBackUnique (_magData get "AmmoType");
@@ -45,13 +45,13 @@ then{
 	};
 
 {
-	private _AmmoData = 	[_x, false , _minSpeed] call Tally_Fnc_getAmmoData;
+	private _AmmoData = 	[_x, false , _minSpeed] call ObjScan_fnc_getAmmoData;
 	_AmmoClasses pushBackUnique (_AmmoData get "class ID");
 }forEach _AmmoTypes;
 
-private _weaponModes 	= [_weapon] call Tally_Fnc_weaponModes;
+private _weaponModes 	= [_weapon] call ObjScan_fnc_weaponModes;
 private _muzzleData		= createHashMap;
-if(count _muzzles > 1)then{_muzzleData = [_weapon] call Tally_Fnc_weaponMuzzles}; 
+if(count _muzzles > 1)then{_muzzleData = [_weapon] call ObjScan_fnc_weaponMuzzles}; 
 
 _weaponData set ["name", 			_name];
 _weaponData set ["max-Ammo-Cap", 	_maxAmmoCap];
@@ -62,16 +62,16 @@ _weaponData set ["magazines", 		_magazines];
 _weaponData set ["ammoClasses", 	_ammoClasses];
 _weaponData set ["ammoNames", 		_AmmoTypes];
 _weaponData set ["weapon-modes", 	_weaponModes];
-_weaponData set ["fire-Modes", 		[_weaponModes] call Tally_Fnc_fireModes];
+_weaponData set ["fire-Modes", 		[_weaponModes] call ObjScan_fnc_fireModes];
 _weaponData set ["muzzles", 		_muzzleData];
 _weaponData set ["cursor", 			_cursor];
 _weaponData set ["cursor-aim", 		_cursorAim];
 
-private _rps 		= [_weaponData] call Tally_Fnc_maxRps;
+private _rps 		= [_weaponData] call ObjScan_fnc_maxRps;
 _weaponData 		set ["RPS", _rps];
 
-private _classID 		= [_weaponData, _weapon] call Tally_Fnc_classifyWeapon;
-private _description	= [_classID] call Tally_Fnc_describeWeaponByClass;
+private _classID 		= [_weaponData, _weapon] call ObjScan_fnc_classifyWeapon;
+private _description	= [_classID] call ObjScan_fnc_describeWeaponByClass;
 
 /*if(_name == "")
 then{
