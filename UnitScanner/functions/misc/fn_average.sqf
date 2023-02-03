@@ -20,4 +20,4 @@ if(_sum == 0)exitWith{0};
 Private _Average = (round (_sum / _Length));
 if (_exactCalculation) then{_Average = (_sum / _Length)};
 
-_Average
+_Average 

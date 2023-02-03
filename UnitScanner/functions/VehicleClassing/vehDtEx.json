@@ -1,0 +1,67 @@
+[
+    ["crew", 2],
+    ["name", "M2A1 Slammer"],
+    [
+      "armorData",
+      [
+        ["Alt Armor-Level", 0],
+        ["HP", 900],
+        ["armor", 6],
+        ["Standard Armor-Level", 4],
+        ["CUP-armor", 0],
+        ["Calculated HP", 150],
+        ["damageResistance", 0.00547],
+        ["combined HP", 906],
+        ["openVehicle", 0]
+      ]
+    ],
+    ["maxSpeed", 60],
+    [
+      "weapons",
+      [
+        [
+          "cannon_120mm",
+          [
+            ["ammoClasses", [5.2, 8, 5.1, 7.1]],
+            ["name", "Cannon 120 mm"],
+            ["description", "100-130mm Cannon"],
+            ["class ID", 5.3]
+          ]
+        ],
+        [
+          "LMG_coax",
+          [
+            ["ammoClasses", [2.2]],
+            ["name", "Coaxial MG 7.62 mm"],
+            ["description", "MachineGun"],
+            ["class ID", 3]
+          ]
+        ]
+      ]
+    ],
+    ["macro", "B_MBT_01_cannon_F"],
+    ["weaponTypes", [5.3, 3]],
+    [
+      "chassis",
+      [
+        ["chassisID", 2.6],
+        ["wheels", 16],
+        ["chassisDescription", "heavy armor"],
+        ["mass", 65048],
+        [
+          "shape",
+          [
+            ["height", 3],
+            ["length", 6.3],
+            ["width", 4],
+            ["center", [-0.0239257, 0.473074, 2.49648]],
+            ["Y to X", 1.6]
+          ]
+        ],
+        ["size", 17]
+      ]
+    ],
+    ["driver", 1],
+    ["passengers", 6]
+  ]
+  
