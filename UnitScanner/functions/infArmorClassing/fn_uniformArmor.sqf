@@ -18,9 +18,9 @@ then{_finalArmour = (_ChestArmor / _chestPenetration)};
 
 if(_finalArmour > 5)
 then{
-		_Armored 			= true;
-		_customdescription 	= "Armored uniform";
-	};
+	_Armored 			= true;
+	_customdescription 	= "Armored uniform";
+};
 
 if(_Uniform == "")then{_customdescription = "No uniform"};
 

@@ -6,7 +6,7 @@ _weaponData = createHashMap;
 
 private _name 			= (getText (configfile >> "CfgWeapons" >> _weapon >> "displayName"));
 private _magazines 		= (getArray (configfile >> "CfgWeapons" >> _weapon >> "magazines"));
-private _muzzles	 		= (getArray (configfile >> "CfgWeapons" >> _weapon >> "muzzles"));
+private _muzzles	 	= (getArray (configfile >> "CfgWeapons" >> _weapon >> "muzzles"));
 private _autoReload		= (getNumber (configfile >> "CfgWeapons" >> _weapon >> "autoReload"));
 private _cursor			= (getText 	(configfile >> "CfgWeapons" >> _weapon >> "cursor"));
 private _cursorAim		= (getText 	(configfile >> "CfgWeapons" >> _weapon >> "cursoraim"));
@@ -72,11 +72,6 @@ _weaponData 		set ["RPS", _rps];
 
 private _classID 		= [_weaponData, _weapon] call ObjScan_fnc_classifyWeapon;
 private _description	= [_classID] call ObjScan_fnc_describeWeaponByClass;
-
-/*if(_name == "")
-then{
-		_description = "";
-	};*/
 
 _weaponData set ["class ID", 	_classID];
 _weaponData set ["description",	_description];

@@ -4,8 +4,8 @@ private _vehicleData = SIG_VehicleData get _vehicleCFG;
 if(!isNil "_vehicleData")exitwith{_vehicleData};
 
 private _vehicleData = createHashMap;
-private _armorData 	= createHashMap;
-private _chassis 		= createHashMap;
+private _armorData 	 = createHashMap;
+private _chassis     = createHashMap;
 
 private _simulationType	= (getText 		(configfile >> "CfgVehicles" >> _vehicleCFG >> "simulation"));
 private _class			= (getText 		(configfile >> "CfgVehicles" >> _vehicleCFG >> "vehicleClass"));
@@ -26,15 +26,15 @@ if([_name, "Volga"] call ObjScan_fnc_FindSubString) then {_name = "GAZ-24"};
 
 
 MACROS pushBackUnique _macro;
-_typeData set ["kindOfcar", 		 	(_vehicleCFG isKindOf "car")]; 
+_typeData set ["kindOfcar", 		(_vehicleCFG isKindOf "car")]; 
 _typeData set ["kindOftank", 	 	(_vehicleCFG isKindOf "tank")]; 
 _typeData set ["kindOfStatic", 	 	(_Vehicle isKindOf "StaticWeapon")]; 
-_typeData set ["drone", 				isAutonomous _Vehicle];
-_typeData set ["kindOfAir", 	 	 	(_Vehicle isKindOf "Air")]; 
+_typeData set ["drone", 			isAutonomous _Vehicle];
+_typeData set ["kindOfAir", 	 	(_Vehicle isKindOf "Air")]; 
 _typeData set ["helicopter", 		(_Vehicle isKindOf "Helicopter")]; 
-_typeData set ["plane", 				(_Vehicle isKindOf "plane")]; 
+_typeData set ["plane", 			(_Vehicle isKindOf "plane")]; 
 _typeData set ["VTOL", 	 	 		_VTOL]; 
-_typeData set ["className", 		 	_class];
+_typeData set ["className", 			_class];
 _typeData set ["flaps", 		 		_flaps];
 _typeData set ["enginePower", 		_enginePower];
 _typeData set ["maxSpeed", 		 	_maxSpeed];
@@ -42,22 +42,22 @@ _typeData set ["textDescription",	_textName];
 _typeData set ["name", 			 	_name];
 
 
-private _mass				= getMass _Vehicle;
-private _size				= sizeOf _vehicleCFG;
-private _HP					= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "armor"));
-private _Armor				= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "armorStructural"));
-private _damageResistance	= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "damageResistance"));
-private _hitCrew				= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "crewVulnerable"));
-private _passengers			= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "transportSoldier"));
-private _driver				= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "hasDriver"));
-private _wheels				= count ("true" configClasses (configfile >> "CfgVehicles" >> _vehicleCFG >> "Wheels"));
+private _mass			  = getMass _Vehicle;
+private _size			  = sizeOf _vehicleCFG;
+private _HP				  = (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "armor"));
+private _Armor			  = (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "armorStructural"));
+private _damageResistance = (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "damageResistance"));
+private _hitCrew		  = (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "crewVulnerable"));
+private _passengers		  = (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "transportSoldier"));
+private _driver			  = (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "hasDriver"));
+private _wheels			  = count ("true" configClasses (configfile >> "CfgVehicles" >> _vehicleCFG >> "Wheels"));
 /*private _author				= (getNumber (configfile >> "CfgVehicles" >> _vehicleCFG >> "author"));*/
 
-private _turretConfigs		= "true" configClasses (configfile >> "CfgVehicles" >> _vehicleCFG >> "Turrets");
-private _allWeapons			= createHashMap;
-private _WeaponTypes		= [];
-private _crew				= _driver;
-private _weapons 			= [_Vehicle] call ObjScan_fnc_GetVehicleWeapons;
+private _turretConfigs = "true" configClasses (configfile >> "CfgVehicles" >> _vehicleCFG >> "Turrets");
+private _allWeapons    = createHashMap;
+private _WeaponTypes   = [];
+private _crew          = _driver;
+private _weapons       = [_Vehicle] call ObjScan_fnc_GetVehicleWeapons;
 
 {_crew	= (_crew + getNumber (_x >> "hasGunner"))} forEach _turretConfigs;
 
