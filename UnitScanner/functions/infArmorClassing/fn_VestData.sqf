@@ -26,11 +26,11 @@ if(!isNil "_data")exitWith{_data};
 
 private _VestData			= createHashMap;
 private _chestArmor			= (getNumber (configFile >> "CfgWeapons" >> _vest >> "itemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "Armor"));
-private _chestPenetration		= (getNumber (configFile >> "CfgWeapons" >> _vest >> "itemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "passThrough"));
-private _description			= (getText (configFile >> "CfgWeapons" >> 	_vest >> "descriptionShort"));
+private _chestPenetration	= (getNumber (configFile >> "CfgWeapons" >> _vest >> "itemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "passThrough"));
+private _description		= (getText   (configFile >> "CfgWeapons" >> _vest >> "descriptionShort"));
 private _finalArmour 		= _chestArmor;
 private _armorLevel			= 0;
-private _explosiveResistant 	= false;
+private _explosiveResistant = false;
 
 if(_chestArmor > 0
 &&{_chestPenetration > 0})

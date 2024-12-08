@@ -5,6 +5,10 @@ private _weaponData				= _vehicleData get "weapons";
 private _weapons				= _vehicleData get "weaponTypes";
 private _drone					= _vehicleData get "drone";
 private _passengers				= _vehicleData get "passengers";
+
+if(isNil "_passengers")
+then{_passengers = 0;};
+
 private _transPort				= _passengers > 5;
 private _description 			= _chassis;
 private _lethalWeapons			= [];
