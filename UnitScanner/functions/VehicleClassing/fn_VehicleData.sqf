@@ -76,23 +76,25 @@ private _weapons       = [_Vehicle] call ObjScan_fnc_GetVehicleWeapons;
 } forEach _weapons;
 
 
-_armorData set 	["HP", 					_HP];
-_armorData set 	["armor", 				_Armor];
-_armorData set 	["Calculated HP",		round(_HP / _Armor)];
-_armorData set 	["combined HP",			round(_HP + _Armor)];
-_armorData set 	["Standard Armor-Level",[_armorData] call ObjScan_fnc_vehicleArmorLevel];
-_armorData set 	["Alt Armor-Level",		round(_Armor / _HP)];
-_armorData set 	["damageResistance",	_damageResistance];
-_armorData set 	["openVehicle",			_hitCrew];
+_armorData   set ["HP", 					_HP];
+_armorData   set ["armor", 				_Armor];
+_armorData   set ["Calculated HP",		round(_HP / _Armor)];
+_armorData   set ["combined HP",			round(_HP + _Armor)];
+_armorData   set ["Standard Armor-Level",[_armorData] call ObjScan_fnc_vehicleArmorLevel];
+_armorData   set ["Alt Armor-Level",		round(_Armor / _HP)];
+_armorData   set ["damageResistance",	_damageResistance];
+_armorData   set ["openVehicle",			_hitCrew];
+
 _vehicleData set ["weapons", 			_allWeapons];
 _vehicleData set ["crew", 				_crew];
 _vehicleData set ["armorData", 			_armorData];
-_vehicleData set ["weaponTypes",			_WeaponTypes];
+_vehicleData set ["weaponTypes",	    _WeaponTypes];
 _vehicleData set ["passengers",			_passengers];
 _vehicleData set ["driver",				_driver];
 _vehicleData set ["name", 			 	_name];
+_vehicleData set ["icon", 			 	_icon];
 _vehicleData set ["macro", 			 	_macro];
-_vehicleData	set ["maxSpeed", 		 	_maxSpeed];
+_vehicleData set ["maxSpeed", 		 	_maxSpeed];
 
 _armorData 	set ["CUP-armor", 			([_vehicleData] call ObjScan_fnc_CupArmor)];
 
@@ -104,9 +106,9 @@ _chassis 		set ["shape", 				[_Vehicle] call ObjScan_fnc_objectShape];
 private _chassisID 			= [_vehicleData, _typeData, _chassis] call ObjScan_fnc_getChassis;
 private _chassisDescription	= [_chassisID] call ObjScan_fnc_chassisDespcription;
 
-_chassis 		set ["chassisID", 			_chassisID];
-_chassis 		set ["chassisDescription",	_chassisDescription];
-_vehicleData set ["chassis",				_chassis];
+_chassis 	 set ["chassisID", 			         _chassisID];
+_chassis 	 set ["chassisDescription",	_chassisDescription];
+_vehicleData set ["chassis",				       _chassis];
 
 
 

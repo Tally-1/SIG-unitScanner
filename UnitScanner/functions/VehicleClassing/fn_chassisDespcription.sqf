@@ -1,8 +1,7 @@
 params ["_class"];
 private _unDefTxt = "undefined chassis";
 
-if(_class == 0)	exitwith{_unDefTxt};
-
+if(_class == 0)	    exitwith{_unDefTxt};
 if(_class == 0.8)	exitwith{"static"};
 if(_class == 0.9)	exitwith{"microVehicle"};
 
